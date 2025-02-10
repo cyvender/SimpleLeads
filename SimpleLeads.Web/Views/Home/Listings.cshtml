@@ -1,0 +1,28 @@
+﻿@using SimpleLeads.Data
+@model ListingViewModel
+
+<div class="container">
+	<div class="row">
+		<div class="col-md-8">
+			<h1>Listings</h1>
+			@foreach (Listing l in Model.Listings)
+			{
+				<div class="card mb-4">
+					<div>
+						<h1>Listed on @l.DateCreated.ToLongDateString()</h1>
+					</div>
+					<h1>Phone Number: @l.PhoneNumber</h1>
+					<p class="card-text">@l.Text</p>
+
+					@* Should have used dictionary here? *@
+					@if(Model.UserIds.Contains(l.Id)) 
+					{
+							<div class="card-body">
+							<a href="/home/DeleteListing?id=@l.Id" class="btn btn-danger">Delete</a>
+							</div>
+					}
+				</div>
+			}
+		</div>
+	</div>
+</div>

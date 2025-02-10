@@ -1,0 +1,12 @@
+﻿﻿<div class="row">
+    <div class="col-md-8 offset-md-2 bg-light rounded-3 p-5">
+        <form method="POST" action="/home/addlisting">
+            <input type="hidden" value="@DateTime.Now" name="datecreated"/>
+            <input type="text" class="form-control" placeholder="Phone Number" name="phonenumber" />
+            <br />
+            <textarea class="form-control" rows="20" placeholder="Description" name="text"></textarea>
+            <br />
+            <button class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+</div>
